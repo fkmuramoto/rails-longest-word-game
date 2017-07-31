@@ -1,0 +1,18 @@
+<h1>Word#game</h1>
+
+<p>Here is your grid:</p>
+<ul>
+  <% @grid.each do |letter| %>
+    <li><%= letter.upcase %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="get">
+  <label for="question">What is your longest word?</label>
+  <input type="text" id="question" name="guess" placeholder="Type guess!">
+  <input type="submit" value="Go on!">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+</form>
+
+<p>Find me in app/views/word/game.html.erb</p>
